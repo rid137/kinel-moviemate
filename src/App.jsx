@@ -6,22 +6,26 @@ import MovieDetail from "./pages/MovieDetail"
 import NotFound from "./pages/NotFound"
 import Login from "./pages/Login"
 import Dashboard from "./pages/dashboard"
+import { AuthProvider } from "./context/AuthContext"
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <Routes>
+    <AuthProvider>
+      <BrowserRouter>
+        <Routes>
 
-        <Route path="/" element={<Home />} />
-        <Route path="/browse" element={<Browse />} />
-        <Route path="/watchlist" element={<Watchlist />} />
-        <Route path="/movie/:id" element={<MovieDetail />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="*" element={<NotFound />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/browse" element={<Browse />} />
+          <Route path="/watchlist" element={<Watchlist />} />
+          <Route path="/movie/:id" element={<MovieDetail />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="*" element={<NotFound />} />
 
-      </Routes>
-    </BrowserRouter>
+        </Routes>
+      </BrowserRouter>
+    </AuthProvider>
+
   )
 }
 

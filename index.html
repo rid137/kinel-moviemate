@@ -1,13 +1,26 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>moviemate</title>
+    <!-- Google Font: Inter — loaded here so it's available globally -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>MovieMate 🎬</title>
   </head>
   <body>
+    <!--
+      This single <div id="root"> is where React mounts our entire app.
+      React takes over this element and manages everything inside it.
+      This is the essence of a Single-Page Application (SPA).
+    -->
     <div id="root"></div>
+
+    <!-- React's entry point — Vite processes this module -->
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

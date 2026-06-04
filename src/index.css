@@ -1,21 +1,56 @@
+/* =============================================================================
+   src/index.css
+   WEEK 7 (Tailwind CSS) — extended in Week 8 (CSS Modules)
+
+   Tailwind v4 — a single @import replaces the three @tailwind directives
+   that were needed in v3. The Vite plugin (configured in vite.config.js)
+   handles everything automatically.
+
+   Custom theme values (brand colours, fonts) are now defined right here
+   using @theme, instead of in a separate tailwind.config.js file.
+   ============================================================================= */
+
+/* Single import — replaces @tailwind base/components/utilities from v3 */
 @import "tailwindcss";
 
+/* ─────────────────────────────────────────────────────────────────────────────
+   CUSTOM THEME (Tailwind v4 — @theme block)
+   Define your own design tokens here. Tailwind automatically turns these
+   CSS variables into utility classes:
+     --color-brand-500  →  bg-brand-500, text-brand-500, ring-brand-500 …
+     --font-sans        →  font-sans
+   ───────────────────────────────────────────────────────────────────────────── */
+@theme {
+  /* Brand colour palette — purple accent used throughout the app */
+  --color-brand-50:  #fdf4ff;
+  --color-brand-500: #a855f7;
+  --color-brand-600: #9333ea;
+  --color-brand-700: #7e22ce;
+
+  /* Font stack — Inter is loaded from Google Fonts in index.html */
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   DARK MODE (Tailwind v4)
+   By default Tailwind v4 dark: uses prefers-color-scheme.
+   This variant overrides it to use a .dark class on <html> instead,
+   ───────────────────────────────────────────────────────────────────────────── */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   GLOBAL BASE STYLES
+   ───────────────────────────────────────────────────────────────────────────── */
 @layer base {
   html {
-    scroll-behavior: smooth;;
+    scroll-behavior: smooth;
   }
 
   body {
-    @apply bg-gray-950 text-gray-100 font-sans;
+    /* Dark cinema-themed background — matches the app's visual style */
+    background-color: theme(--color-gray-950);
+    color: theme(--color-gray-100);
+    font-family: var(--font-sans);
     min-height: 100vh;
-  }
-}
-
-@layer utilities {
-  .line-clamp-3 {
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
   }
 }
