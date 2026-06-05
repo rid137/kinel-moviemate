@@ -5,8 +5,8 @@ import Watchlist from "./pages/Watchlist"
 import MovieDetail from "./pages/MovieDetail"
 import NotFound from "./pages/NotFound"
 import Login from "./pages/Login"
-import Dashboard from "./pages/dashboard"
 import { AuthProvider } from "./context/AuthContext"
+import Dashboard from "./pages/dashboard"
 
 const App = () => {
   return (

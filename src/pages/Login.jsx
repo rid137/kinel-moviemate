@@ -17,8 +17,8 @@
 
 import { useState } from "react";
 import { useNavigate, useLocation, Link } from "react-router-dom";
-import { useAuth } from "@/context/AuthContext";
-import Button from "@/components/ui/Button";
+import { useAuth } from "../context/AuthContext";
+import Button from "../components/ui/Button";
 
 function Login() {
   const navigate = useNavigate();
@@ -66,6 +66,8 @@ function Login() {
     // ─────────────────────────────────────────────────────────────────────
     const destination = location.state?.from?.pathname || "/dashboard";
     navigate(destination, { replace: true });
+
+    // navigate("/dashboard");
   };
 
   if (isAuthenticated) {
