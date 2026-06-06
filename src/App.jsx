@@ -6,7 +6,7 @@ import MovieDetail from "./pages/MovieDetail"
 import NotFound from "./pages/NotFound"
 import Login from "./pages/Login"
 import { AuthProvider } from "./context/AuthContext"
-import Dashboard from "./pages/dashboard"
+import Dashboards from "./pages/Dashboards"
 
 const App = () => {
   return (
@@ -17,9 +17,9 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/browse" element={<Browse />} />
           <Route path="/watchlist" element={<Watchlist />} />
-          <Route path="/movie/:id" element={<MovieDetail />} />
+          <Route path="/movies/:id" element={<MovieDetail />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/dashboards" element={<Dashboards />} />
           <Route path="*" element={<NotFound />} />
 
         </Routes>

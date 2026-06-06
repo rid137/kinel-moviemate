@@ -43,7 +43,9 @@ export function AuthProvider({ children }) {
 
     // Logging out is simply resetting user back to null
     const logout = () => setUser(null);
-
+    // const logout = () => {
+    //     setUser(null)
+    // }
     const value = {
         user,
         isAuthenticated: user !== null, // derived boolean — no separate state needed

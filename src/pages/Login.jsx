@@ -39,6 +39,8 @@ function Login() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+    // const name = e.target.name
+    // const value = e.target.value
     setForm((prev) => ({
       ...prev,
       [name]: value,
@@ -64,14 +66,14 @@ function Login() {
     // ProtectedRoute stores the intended URL in location.state.from
     // before redirecting to /login. After login we send the user back.
     // ─────────────────────────────────────────────────────────────────────
-    const destination = location.state?.from?.pathname || "/dashboard";
+    const destination = location.state?.from?.pathname || "/dashboards";
     navigate(destination, { replace: true });
 
     // navigate("/dashboard");
   };
 
   if (isAuthenticated) {
-    navigate("/dashboard");
+    navigate("/dashboards");
     return null;
   }
 
